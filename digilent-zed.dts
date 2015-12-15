@@ -1,0 +1,21 @@
+	ps7_axi_interconnect_0: axi@0 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "xlnx,ps7-axi-interconnect-1.00.a", "simple-bus";
+		ranges;
+		
+		
+		zed_oled {
+			compatible = "dglnt,pmodoled-gpio";
+			/* GPIO Pins */
+			vbat-gpio = <&ps7_gpio_0 55 0>;
+			vdd-gpio = <&ps7_gpio_0 56 0>;
+			res-gpio = <&ps7_gpio_0 57 0>;
+			dc-gpio = <&ps7_gpio_0 58 0>;
+			/* SPI-GPIOs */
+			spi-bus-num = <2>;
+			spi-speed-hz = <4000000>;
+			spi-sclk-gpio = <&ps7_gpio_0 59 0>;
+			spi-sdin-gpio = <&ps7_gpio_0 60 0>;
+		};
+	}
